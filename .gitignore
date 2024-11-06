@@ -1,0 +1,7 @@
+.env
+
+# Java Builds
+target/
+
+# CMake Builds
+src/main/native/build/
