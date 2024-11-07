@@ -4,7 +4,7 @@
   <artifactId>jwhisper</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>Java Whisper</name>
-  <url>https://github.com/antoniomayk/whisper-jni</url>
+  <url>https://github.com/antoniomayk/jwhisper</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.release>21</maven.compiler.release>
