@@ -3,5 +3,8 @@
 # Java Builds
 target/
 
+# Shared Libraries
+src/main/resources/linux-x86_64/*.so
+
 # CMake Builds
-src/main/native/build/
+build/
