@@ -1,0 +1,18 @@
+# Misc
+
+/.env*
+
+# Exclude shared libraries
+src/main/resources/linux_amd64/*.so
+
+# CLangd
+
+/.cache
+
+# MVN
+
+/target
+
+# CMake
+
+/build

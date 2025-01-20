@@ -1,0 +1,3 @@
+[submodule "src/main/native/external/whisper.cpp"]
+	path = src/main/native/external/whisper.cpp
+	url = git@github.com:ggerganov/whisper.cpp.git

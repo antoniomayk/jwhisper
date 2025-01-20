@@ -1,0 +1,56 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "Run JwhisperTest",
+      "command": "bash",
+      "args": ["-c", "source .env && mvn test -Dtest=JwhisperTest -Dmaven.test.failure.ignore=true"],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "Build Library (Linux AMD64)",
+      "command": "bash",
+      "args": ["-c", "source .env && mvn compile -P jni,cmake,linux_amd64"],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "Run SonarQube Analysis",
+      "command": "bash",
+      "args": [
+        "-c",
+        "source .env && mvn clean site verify -P jni,cmake,linux_amd64 sonar:sonar -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.projectName='${SONAR_PROJECT_NAME}' -Dsonar.host.url=${SONAR_HOST_URL} -Dsonar.token=${SONAR_TOKEN}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ]
+}
